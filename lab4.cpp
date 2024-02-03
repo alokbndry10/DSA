@@ -2,7 +2,7 @@
 
 int main() {
     int gd = DETECT, gm;
-    initgraph(&gd, &gm, "C:\\Turboc3\\BGI");
+    initgraph(&gd, &gm, "");
 
     // Draw a rectangle
     rectangle(100, 100, 300, 200);
