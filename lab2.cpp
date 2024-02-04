@@ -1,67 +1,77 @@
-#include<iostream>
-using namespace std;
+//Write a program to show the push( ), pop( ) and display of elements in stack
+#include<stdio.h>
+#include<conio.h>
+#define max_size 4
 
-const int MAX_SIZE = 100;
+int top = -1;
+int value;
+int count = 0;
+int ch;
 
-int n = 0; // Initialize n to 0
-int a[MAX_SIZE];
-
-void push() {
-    if (n == MAX_SIZE) {
-        cout << "Error: Stack overflow." << endl;
-        return;
-    }
-
-    cout << "Enter element to push: ";
-    cin >> a[n];
-    n++;
-}
-
-void display() {
-    if (n == 0) {
-        cout << "Stack is empty." << endl;
-        return;
-    }
-
-    for (int i = n - 1; i >= 0; i--) {
-        cout << "Element " << n - i - 1 << " = " << a[i] << endl;
+void push(int stack[], int value) {
+    if (top == (max_size - 1)) {
+        printf("Stack overflow\n");
+    } else {
+    	printf("%d is pushed into stack",value);
+        top++;
+        stack[top] = value;
+        count++;
     }
 }
 
-void pop() {
-    if (n == 0) {
-        cout << "Error: Stack underflow." << endl;
-        return;
+void pop(int stack[]) {
+    if (top == -1) {
+        printf("Stack is underflow\n");
+    } else {
+        printf("Popped element: %d\n", stack[top]);
+        top--;
+        count--;
     }
+}
 
-    n--;
-    cout << "Element popped." << endl;
+int i;
+void display(int stack[]) {
+    if (top == -1) {
+        printf("Stack is empty\n");
+    } else {
+        printf("Stack elements: ");
+        for (i = top; i >= 0; i--) {
+            printf("%d\t", stack[i]);
+        }
+        printf("\n");
+    }
 }
 
 int main() {
-    int choice;
+    printf("\t\t****************\n");
+    printf("\t\tSTACK OPERATIONS\n");
+    printf("\t\t****************\n");
+    int stack[max_size];
+    int ch, value;
 
-    while (true) {
-        cout << "Press 1 to push, press 2 to pop, press 3 to display, or press 4 to terminate: ";
-        cin >> choice;
+    while (1) {
+        printf("\n1. Push\n2. Pop\n3. Display\n4. Exit\n");
+        printf("Enter the number to perform the desired stack operation: ");
+        scanf("%d", &ch);
 
-        switch (choice) {
+        switch (ch) {
             case 1:
-                push();
+                printf("Enter the element to push into the stack: ");
+                scanf("%d", &value);
+                push(stack, value);
                 break;
             case 2:
-                pop();
+                pop(stack);
                 break;
             case 3:
-                display();
+                display(stack);
                 break;
             case 4:
-                cout << "Program terminated." << endl;
+                printf("Exit from the program\n");
                 return 0;
             default:
-                cout << "Invalid choice. Try again." << endl;
+                printf("Invalid choice entered\n");
+                break;
         }
     }
-
-    return 0;
 }

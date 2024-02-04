@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "d:/college/DSA",
-      "program": "d:/college/DSA/build/Debug/outDebug",
+      "cwd": "d:/college/Alok/DSA",
+      "program": "d:/college/Alok/DSA/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
