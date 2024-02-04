@@ -1,5 +1,5 @@
 //Write a program in c showing the concept of Circular Queue.
-#include <iostream.h>
+#include <iostream>
 #define max_size 4
 
 
@@ -62,8 +62,6 @@ int main() {
             case 3:
                 display();
                 break;
-            case 4:
-                return 0;
             default:
                 printf("Invalid Choice\n");
                 break;
